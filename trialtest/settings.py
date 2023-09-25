@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['trialtest2023.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-mthabs-mytrialtest-d638966ijn.us2.codeanyapp.com']
 
 
 # Application definition
@@ -134,7 +134,7 @@ STATICFILES_STORAGE = 'Cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/static/'
+MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'Cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
