@@ -67,7 +67,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
-
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ROOT_URLCONF = 'trialtest.urls'
 
 TEMPLATES = [
