@@ -1,18 +1,26 @@
-body {
-    background-color: #F9FAFC;
+.sayit {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: red;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.993);
+    font-weight: bold;
 }
 
+.sayit span {
+    color: black;
+    font-weight: bold;
+}
+
+
+
+/*
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
 }
-
-.red-o {
-    color: #E84610;
-}
-
+*/
 .thin {
     font-weight: 300;
 }
@@ -93,7 +101,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: blue;
 }
 
 .post-title {
