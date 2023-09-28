@@ -1,26 +1,24 @@
-.sayit {
+.logo {
     font-family: 'Arial', sans-serif;
     font-size: 24px;
     color: red;
-    text-shadow: 1px 1px 3px rgba(60, 60, 60, 0.6);
+    text-shadow: 1px 1px 3px rgba(60, 60, 60, 0.99);
     font-weight: bold;
 }
 
-.sayit span {
+.logo span {
     color: black;
     font-weight: bold;
 }
-
-
-
-/*
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
+.bt-purple {
+    color: #800080;
+    font-size: 24px;
+    text-decoration: none;
+    border: none;
+    text-shadow: 1px 1px 3px rgba(60, 60, 60, 0.5);
+    font-weight: bold;
 }
-*/
+
 .thin {
     font-weight: 300;
 }
@@ -41,23 +39,11 @@
     border: none;
     background-color: transparent;
 }
-
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
+.card-body .alert.alert-success {
+    background-color: purple; 
+    color:white;
+    text-align: center;
+    opacity:0.6;
 }
 
 .masthead {
@@ -70,7 +56,8 @@
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: purple;
+    opacity: 0.8;
     color: white;
     position: relative;
 }
@@ -87,10 +74,8 @@
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
+    background: purple;
+    opacity: 0.8;
     z-index: 100;
 }
 
@@ -111,22 +96,22 @@
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: whitesmoke;
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: purple;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: purple;
 }
 
 .link {
-    color: #23BBBB;
+    color: purple;
     text-decoration: none;
 }
 
@@ -137,14 +122,22 @@
 }
 
 .btn-like {
-    color: #E84610;
     border: none;
-    background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: red;
     background: transparent;
     border: none;
+}
+
+.text-center button{
+    background-color: purple;
+}
+
+.btn {
+    width: auto;
+    max-width: 200px;
+    white-space: nowrap;
 }

@@ -9,23 +9,21 @@
         <!-- Added mx-auto to center each card. -->
         <div class="card mb-7">
           <div class="card-body">
-            <div class="image-container">
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                <div class="image-container">
                 <h2 class="card-title">{{ post.title }}</h2>   
+                {% if "placeholder" in post.featured_image.url %}
+                <img
+                    class="card-img-top"
+                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+                />
+                {% else %}
+                <img class="card-img-top" src=" {{ post.featured_image.url }}" />
+                {% endif %}
+                </div>
             </a>
-              {% if "placeholder" in post.featured_image.url %}
-              <img
-                class="card-img-top"
-                src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
-              />
-              {% else %}
-              <img class="card-img-top" src=" {{ post.featured_image.url }}" />
-              {% endif %}
-              <div class="image-flash">
-                <p class="author">Author: {{ post.author }}</p>
-              </div>
-            </div>
-            <p class="card-text">{{ post.excerpt }}</p>
+            <p>Author: {{ post.author }}</p>
+            <p>{{ post.excerpt }}</p>
             <hr />
             <p class="card-text text-muted h6">
               {{ post.created_on}}
