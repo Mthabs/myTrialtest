@@ -32,32 +32,26 @@
                     {{ post.content | safe }}
                 </p>
                 <div class="row">
-
-                    <div class="col-1">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                        class="fas fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                        class="far fa-heart"></i></button>
-                                {% endif %}
-                            </form>
+                    <div class="col-2">
+                        <!-- Merging both col-1 into a single col-2 for better spacing -->
+                        {% if user.is_authenticated %}
+                        <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">Like</button>
                             {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">Like</button>
                             {% endif %}
-                            <!-- The number of likes goes before the closing strong tag -->
-                            <span class="text-secondary">{{ post.number_of_likes }} </span>
-                        </strong>
+                        </form>
+                        {% else %}
+                        <button class="btn-like" disabled>Like</button> <!-- Disabled button for non-authenticated users -->
+                        {% endif %}
+                        <span>{{ post.number_of_likes }} likes</span>  
                     </div>
-                    <div class="col-1">
+                    <div class="col-2">
+                        <!-- Adjusting to col-2 for consistency -->
                         {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_comments }}</strong>
+                        <span>{{ total_comments }} comments</span>
                         {% endwith %}
                     </div>
                 </div>
@@ -93,7 +87,6 @@
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- For later -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval
