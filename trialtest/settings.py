@@ -32,8 +32,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = [
-    'trialtest2023-225b1aa3ccf3.herokuapp.com']
+ALLOWED_HOSTS = ['8000-mthabs-mytrialtest-d638966ijn.us2.codeanyapp.com']
 
 
 # Application definition
