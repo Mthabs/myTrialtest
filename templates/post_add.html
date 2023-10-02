@@ -15,4 +15,17 @@
         </div>
     </div>
 </div>
+<script>
+    function slugify(string) {
+        return string.toString().toLowerCase()
+            .trim()
+            .replace(/\s+/g, '-')           // Replace spaces with -
+            .replace(/[^\w\-]+/g, '')       // Remove all non-word characters
+            .replace(/\-\-+/g, '-');        // Replace multiple - with single -
+    }
+
+    document.getElementById('id_title').addEventListener('input', function () {
+        document.getElementById('id_slug').value = slugify(this.value);
+    });
+</script>
 {% endblock %}

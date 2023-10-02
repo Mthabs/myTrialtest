@@ -11,9 +11,14 @@ class CommentForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title','slug','author','Content','featured_image','excerpt','status',]
+        fields = ['title', 'slug', 'author', 'Content',
+                  'featured_image', 'excerpt', 'status', ]
+        widgets = {
+            'excerpt': forms.Textarea(attrs={'rows': 4, 'cols': 50}),
+        }
 
-
-def __init__(self, *args, **kwargs):
-    super(PostForm, self).__init__(*args, **kwargs)
-    self.fields['status'].initial = 1
+    def __init__(self, *args, **kwargs):
+        super(PostForm, self).__init__(*args, **kwargs)
+        self.fields['status'].initial = 1
+        self.fields['title'].widget.attrs.update({'id': 'id_title'})
+        self.fields['slug'].widget.attrs.update({'id': 'id_slug'})
