@@ -14,7 +14,7 @@ class PostForm(forms.ModelForm):
         fields = ['title', 'slug', 'author', 'Content',
                   'featured_image', 'excerpt', 'status', ]
         widgets = {
-            'excerpt': forms.Textarea(attrs={'rows': 4, 'cols': 50}),
+            'excerpt': forms.Textarea(attrs={'rows': 4, 'cols': 30}),
         }
 
     def __init__(self, *args, **kwargs):
