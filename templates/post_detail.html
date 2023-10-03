@@ -1,18 +1,17 @@
 {% extends 'base.html' %} {% block content %}
-{% load crispy_forms_tags %} {% load random %}
+{% load crispy_forms_tags %} 
 <div class="container-fluid">
     <div class="row justify-content-center mt-5 pt-4">
         <!-- Blog Entries Column -->
         <div class="col-md-4">
             <!-- Single Blog Card -->
             <div class="card mb-7">
-                <h2 class="card-title mb-2">{{ post.title }}</h2>
+                <h2 class="card-title mb-2">{{ post.title }}</h2> <!-- Added a margin-bottom (mb-2) to create space -->
                 {% if "placeholder" in post.featured_image.url %}
-                {% with random_img=image_files|random %}
-                <img class="card-img-top mt-2" src="/static/images/{{ random_img }}" alt="Random Image" />
-                {% endwith %}
+                <img class="card-img-top mt-2" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" />
                 {% else %}
-                <img class="card-img-top mt-2" src="{{ post.featured_image.url }}" alt="Featured Image" />
+                <img class="card-img-top mt-2" src="{{ post.featured_image.url }}" />
+                <!-- Added a margin-top (mt-2) to create space -->
                 {% endif %}
             </div>
         </div>
